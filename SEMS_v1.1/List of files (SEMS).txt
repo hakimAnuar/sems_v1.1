@@ -1,0 +1,63 @@
+SEMS fx
+----------------------------------------------------------------------
+Table used:
+- inventory (formerly `test`)
+- hold_list
+- part_list
+- supply_list
+- operator (TBD)
+
+----------------------------------------------------------------------
+
+1. Dashboard - Supply
+	- supply   : doSupply.php (alert success)
+	- filter fx: dashboard.php
+
+1a new receiving: add-receiving.php (alert success) -receiving expiration confirmation
+
+2. Receiving - inventory
+	- page  : receiving-list.php
+	
+	- edit  : update-receiving.php (alert success)
+	- hold  : hold.php (alert success)
+	- delete: delete.php (alert success)
+
+3. Supply? (edit & delete not needed)
+	- page  : supply-list.php 
+	- transfer data from `test` 
+	  to `supply` as supply history: supply.php TBD (probably same as hold part fx) 
+	- edit  : editSupply.php (TESTING PHASE)
+	- delete: delete-Supply.php 
+
+4. Hold part list
+	- page   : hold-list.php
+	- edit   : editHold.php 
+	- release: release.php (Be careful with this...)
+	- dispose: dispose.php
+
+5. Part list - Expiration maintenance
+	- page     : part-list.php
+	- new parts: add-parts.php 
+	- edit     : edit-parts.php 
+	- delete   : delete-parts.php
+
+6. User/ Admin
+	- page	  : TBD
+	- add user: TBD
+	- edit	  : TBD
+	- delete  : TBD
+
+--------------------------------------------------------------------------
+
+Improvements:
+- prevent sql injection
+- use js & jquery
+- edit in supply history and hold list affects `test` table.
+- use laravel?
+- proper error handling and security measures, such as escaping user 
+  input and using prepared statements, should be implemented to 
+  prevent SQL injection attacks
+- ensure entry update can be done repeatedly. (Completed)
+- very slow connection
+- create db backup
+- revamp SEMS as rts
